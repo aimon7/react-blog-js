@@ -21,6 +21,14 @@ class FullPost extends Component {
         }
     }
 
+    deletePostHandler = () => {
+        axios.delete(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
+            .then(response => {
+               if (response.status === 200)
+                   console.log(`Deleted`);
+            });
+    }
+
     render() {
         let post = <p style={{textAlign: 'center'}}>Please select a Post!</p>;
         if (this.props.id) {
