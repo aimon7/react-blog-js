@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axios from '../../axios'; // this is now our own axios configuration instance file and not default axios package, we do that to pass some special configuration (maybe different header or post type)
 
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
