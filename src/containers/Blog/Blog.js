@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 
 // import axios from 'axios';
 import Posts from './Posts/Posts';
-import FullPost from './FullPost/FullPost';
 import './Blog.css';
 import NewPost from './NewPost/NewPost';
 
@@ -15,14 +14,14 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li><NavLink
-                                to="/"
+                                to="/posts/"
                                 exact
                                 activeClassName="my-active"
                                 activeStyle={{
                                     color: '#fa923f',
                                     textDecoration: 'underline'
                                 }}
-                            >Home</NavLink></li>
+                            >Posts</NavLink></li>
                             <li><NavLink to={{
                                 pathname: '/new-post',
                                 hash: '#submit', // this is an example of advanced Link setup
@@ -34,11 +33,8 @@ class Blog extends Component {
                 {/*<Route path="/" exact render={() => <h1>Home</h1>}/>*/}
                 {/*<Route path="/" render={() => <h1>Home 2</h1>}/>*/}
                 {/*<Route path="/" exact render={() => <Posts/>}/>*/}
-                <Switch>
-                    <Route path="/" exact component={Posts}/>
-                    <Route path="/new-post" component={NewPost}/>
-                    <Route path="/:id" exact component={FullPost}/>
-                </Switch>
+                <Route path="/new-post" component={NewPost}/>
+                <Route path="/posts/" component={Posts}/>
             </div>
         );
     }
