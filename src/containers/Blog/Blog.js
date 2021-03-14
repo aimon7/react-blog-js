@@ -39,7 +39,8 @@ class Blog extends Component {
                 {/*<Route path="/" exact render={() => <Posts/>}/>*/}
                 {this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}
                 <Route path="/posts" component={Posts}/>
-                <Redirect from="/" to="/posts" />
+                <Route render={() => <h1>Not Found - 404</h1>} />
+                {/*<Redirect from="/" to="/posts" />*/}
             </div>
         );
     }
