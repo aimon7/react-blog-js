@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Redirect } from 'react-router-dom';
 
 // import axios from 'axios';
 import Posts from './Posts/Posts';
 import './Blog.css';
 import NewPost from './NewPost/NewPost';
-import { Redirect } from 'react-router';
 
 class Blog extends Component {
     render() {
