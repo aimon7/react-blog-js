@@ -22,7 +22,8 @@ class NewPost extends Component {
             .then(response => {
                 if (response.status === 201) {
                     console.log(response.status);
-                    this.setState({submitted: true});
+                    this.props.history.push('/posts');
+                    // this.setState({submitted: true});
                 }
             });
     }
